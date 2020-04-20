@@ -1,0 +1,16 @@
+SHOW user;
+
+ALTER PLUGGABLE DATABASE all OPEN;
+SHOW PDBS;
+
+ALTER SESSION SET CONTAINER=PDBTS;
+
+SHOW con_name;
+
+SELECT * FROM database_properties;
+
+DROP USER hrms;
+DROP USER hrms CASCADE;
+CREATE USER hrms IDENTIFIED BY hrms;
+
+SELECT * FROM dba_users;

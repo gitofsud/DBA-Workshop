@@ -2,6 +2,10 @@
 
 ## Introduction
 
+Each PDB has CON_ID, but also CON_DBID which is unique across CDB.
+
+        SELECT con_dbid, con_id FROM v$database;
+
 ### Methods to create PDBs:
 
 * Create a PDB by using seed
@@ -16,6 +20,7 @@
 * SQL*Plus
 * SQL Developer
 * Enterprise Manager Cloud Control
+* Enterprise Manager Database Express
 * DBCA
 
 ## Creating PDBs from SEED
@@ -26,7 +31,8 @@
 
 * Copy data files from seed to new location
 * It will create SYSTEM and SYSYAUX tablespaces
-* It will create default schemas and common users
+* It will create default schemas and common users - SYS & SYSTEM
+* Creates local user (PDBA), granted local PDB_DBA role
 * DB service is automatically created
 
 ### Prerequisites
